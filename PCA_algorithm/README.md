@@ -15,6 +15,7 @@ The covariance matrix is initially computed from the scaled data. The eigen valu
 
 ### <ins>SVD vector approach
 Again the covariance matrix is computed. Singular value decomposition is a matrix factorization approach where a matrix X can be decomposed to a set of three matrices:
+
 $$
 X = U \Sigma V^T
 $$
