@@ -10,3 +10,7 @@
 **4)** The distances of all datapoints to the new centroids are reeveluated.
 
 The process of computing new clusters and evaluating the distances from the centroids is repeated until no changes in the clusters appear.
+
+<p align="center">
+  <img src="images/Screenshot%202026-06-03%20181029.png" width="300">
+</p>
