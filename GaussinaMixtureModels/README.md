@@ -10,12 +10,12 @@ p(x) = \sum_{k=1}^{K} \pi_k \mathcal{N}(x|\mu_k, \Sigma_k)
 $$
 
 Where:
-- \(p(x)\) is the probability density function of x 
-- \(K\): total number of clusters  
-- \(\pi_k\): mixing weight (how probable is that \(x\) comes from \(k\))  
-- \(\mu_k\): mean of cluster \(k\)  
-- \(\Sigma_k\): covariance (shape of cluster \(k\))  
-- \(\mathcal{N}(x \mid \mu_k, \Sigma_k)\): Gaussian distribution for cluster \(k\)
+- \( p(x) \) is the probability density function of \( x \)
+- \( K \): total number of clusters
+- \( \pi_k \): mixing weight (probability that a point belongs to cluster \( k \))
+- \( \mu_k \): mean of cluster \( k \)
+- \( \Sigma_k \): covariance matrix (shape of cluster \( k \))
+- \( \mathcal{N}(x \mid \mu_k, \Sigma_k) \): Gaussian distribution for cluster \( k \)
 
 
 **<ins>Fitting the model**
