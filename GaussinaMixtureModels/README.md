@@ -5,9 +5,9 @@
 Initially we assume that the datapoints are sampled from k different Gaussians. Instead of strictly assigning a datapoint to a cluster(Gaussian) k probabilities are assigned to the datapoint, each one for every Gaussian. So the model is formed as :
 
 
-\[
-p(x) = \sum_{k=1}^{K} \pi_k \, \mathcal{N}(x \mid \mu_k, \Sigma_k)
-\]
+$$
+p(x) = \sum_{k=1}^{K} \pi_k \mathcal{N}(x|\mu_k, \Sigma_k)
+$$
 
 Where:
 - \(p(x)\) is the probability density function of x 
