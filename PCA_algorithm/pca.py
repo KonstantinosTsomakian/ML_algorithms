@@ -78,6 +78,7 @@ def svd_PCA(X, keep_dims):
 
     #Project the data
     svd_projected_data = np.dot(centered_X, V)
+    
 
     #Compute the loadings
     n = centered_X.shape[0]
