@@ -110,7 +110,7 @@ which is equal to :
 ```math
 p(X, Z \mid \theta)
 = \prod_{n=1}^{N} p(z_n \mid \pi)\, p(x_n \mid z_n, \mu, \Sigma)
-```math
+```
 
 But again know we introduce a variable z that we do not know its distribution and values since we do not observe it.
 
