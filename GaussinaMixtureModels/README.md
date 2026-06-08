@@ -86,10 +86,10 @@ To this point we have the datapoints and defined values for the parameters πκ,
 For the maximization step now we take the likelyhood of the data, meaning the probability of observing the data that we have based on the parameters we have.
 
 For the Gaussian Mixture Models and of course considering that all the datapoints are IDD the log likelyhood is the following:
-\[
+```math
 \log p(X \mid \theta)
 = \sum_{n=1}^{N} \log \left( \sum_{k=1}^{K} \pi_k \, \mathcal{N}(x_n \mid \mu_k, \Sigma_k) \right)
-\]
+```
 
 
 
@@ -102,15 +102,16 @@ In order to solve this problem we introduce the set of z variable
 
 So now we need to optimize:
 
-\[
+```math
 \max_{\theta} \log p(X, Z \mid \theta)
-\]
+```
 which is equal to :
 
-\[
+```math
 p(X, Z \mid \theta)
 = \prod_{n=1}^{N} p(z_n \mid \pi)\, p(x_n \mid z_n, \mu, \Sigma)
-\]
+```math
+
 But again know we introduce a variable z that we do not know its distribution and values since we do not observe it.
 
 Here comes a key statistical principle that states that:
@@ -119,42 +120,46 @@ Here comes a key statistical principle that states that:
 
 So we get.
 
-\[
+```math
 \gamma_{nk} \equiv \mathbb{E}[z_{nk}] = p(z_n = k \mid x_n, \theta^{old})
-\]
+```
+
 And know since znk takes only values {1,0}, 1 if the datapoint belongs to the cluster and 0 otherwise.
 
 So overall we have:
 
-\[
+```math
 \mathbb{E}[z_{nk}] = p(z_n = k \mid x_n, \theta^{old})
-\]
+```
 
 And we replace znk with the responsibilities.
 
 The final result is an objective function where when we maximize with respect to each one of the 3 parameters we cat three formulas that give the values that we need to update the parameters of the model.
-\[
+
+```math
 \pi_k = \frac{N_k}{N}
-\] where:
-\[
+```
+ where:
+
+```math
 N_k = \sum_{n=1}^{N} \gamma_{nk}
-\]
+```
 
 **Update the Means of the components**
 
 The new mean for component k(gaussian distribution) is the weighted average of the data points, weighted by the responsibilities:
 
-\[
+```math
 \mu_k = \frac{1}{N_k} \sum_{n=1}^{N} \gamma_{nk} x_n
-\]
+```
 **Update covariances**
 
-\[
+```math
 \Sigma_k
 = \frac{1}{N_k}
 \sum_{n=1}^{N} \gamma_{nk}
 (x_n - \mu_k)(x_n - \mu_k)^T
-\]
+```
 
 <br>
 <br>
