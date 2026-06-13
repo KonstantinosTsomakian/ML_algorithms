@@ -1,1 +1,1 @@
-A set of ML algorithms
+A set of ML algorithms.
