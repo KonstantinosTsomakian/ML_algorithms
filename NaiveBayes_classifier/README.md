@@ -19,6 +19,7 @@ After computing the probability of each class the most probable class is conside
 
 ***Note:***
 When the explanatory variable are categorical the probabilities are computed by counting. However when the explanatory variables are continuous the model assumes that for each feature:
+
 $$
 P(x_i \mid C) \sim \mathcal{N}(\mu_{C,i}, \sigma_{C,i}^2)
 $$
