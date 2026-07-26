@@ -11,7 +11,7 @@ Given a training set the model computes the probability of each class as well as
 $P(X | C)$ is the probability of the features given the class.
 
 
-The assumption that the algorithm does and simplifies the model is that it assumes that all features are independent which means that $$P(X|C)$$ can be decomposed down to the multiplication of all Conditional probabilities of the features given the class times the probability of observing the class.
+The assumption that the algorithm does and simplifies the model is that it assumes that **<ins>all features are independent** which means that $$P(X|C)$$ can be decomposed down to the multiplication of all Conditional probabilities of the features given the class times the probability of observing the class.
 
 $$P(X|C) = P(x_1|C)P(x_2|C)...P(x_N|C)P(C)  $$
 

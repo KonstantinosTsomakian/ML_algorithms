@@ -1,5 +1,5 @@
 ## <ins> Gaussian Mixture Models
-A **GMM** is a probabilistic model that assumes that the data is generated from a mixture of several Gaussian distributions, each with its own mean and covariance.
+A **GMM** is a probabilistic model that assumes that the data are generated from a mixture of several Gaussian distributions, each with its own mean and covariance.
 
 <p align="center">
   <img src="images/image.png" width="300">
@@ -9,7 +9,7 @@ The algorithm iterates trough an Expectation and a Maximization step trying to o
 
 The problem with simple Gaussian models is that a single distribution cannot cover the whole data distribution.
 
-We consider that different clusters contain datapoints that come from different Gaussians. However the Gaussians may have overlapping regions. This means for example that a datapoint that sits in the space where the tails of two Gaussians overlap there is a probability that it can be sampled from the one and the probability that it can be sampled from the other one.
+We consider that different clusters contain datapoints that come from different Gaussians. However the Gaussians may have overlapping regions. This means for example that a datapoint that sits in the space where the tails of two Gaussians overlap there is a probability that it can be sampled from the one and a probability that it can be sampled from the other one.
 
 \( π_k \) represents the prior probability that a randomly selected datapoint comes from Gaussian \(k\).
 
@@ -52,7 +52,7 @@ P(z = k \mid x)
 {\sum_{j=1}^{K} \pi_j \mathcal{N}(x_n \mid \mu_j, \Sigma_j)}
 ```
 
-From the numerator the \(P(z = k)\) is the mixing coefficient πκ and the probability of x given the actual cluster that is assigned to is the gaussian of that cluster so we get:
+From the numerator the \(P(z = k)\) is the mixing coefficient $π_κ$ and the probability of x given the actual cluster that is assigned to is the gaussian of that cluster so we get:
 
 ```math
 P(x_n \mid z = k)\,P(z = k)
@@ -81,7 +81,7 @@ Bringing everything together we have the responsibilities in the form:
 
  <ins> **This is the E step of the EM algorithm**
 
-To this point we have the datapoints and defined values for the parameters πκ, mean and variance.
+To this point we have the datapoints and defined values for the parameters $π_κ$, mean and variance.
 
 For the maximization step now we take the likelyhood of the data, meaning the probability of observing the data that we have based on the parameters we have.
 
@@ -112,7 +112,7 @@ p(X, Z \mid \theta)
 = \prod_{n=1}^{N} p(z_n \mid \pi)\, p(x_n \mid z_n, \mu, \Sigma)
 ```
 
-But again know we introduce a variable z that we do not know its distribution and values since we do not observe it.
+But again now we introduce a variable z that we do not know its distribution and values since we do not observe it.
 
 Here comes a key statistical principle that states that:
 
@@ -124,7 +124,7 @@ So we get.
 \gamma_{nk} \equiv \mathbb{E}[z_{nk}] = p(z_n = k \mid x_n, \theta^{old})
 ```
 
-And know since znk takes only values {1,0}, 1 if the datapoint belongs to the cluster and 0 otherwise.
+And know since $z_{nk}$ takes only values {1,0}, 1 if the datapoint belongs to the cluster and 0 otherwise.
 
 So overall we have:
 
@@ -132,9 +132,9 @@ So overall we have:
 \mathbb{E}[z_{nk}] = p(z_n = k \mid x_n, \theta^{old})
 ```
 
-And we replace znk with the responsibilities.
+And we replace $z_{nk}$ with the responsibilities.
 
-The final result is an objective function where when we maximize with respect to each one of the 3 parameters we cat three formulas that give the values that we need to update the parameters of the model.
+The final result is an objective function where when we maximize with respect to each one of the 3 parameters we get three formulas that give the values that we need to update the parameters of the model.
 
 ```math
 \pi_k = \frac{N_k}{N}
@@ -147,7 +147,7 @@ N_k = \sum_{n=1}^{N} \gamma_{nk}
 
 **Update the Means of the components**
 
-The new mean for component k(gaussian distribution) is the weighted average of the data points, weighted by the responsibilities:
+The new mean for component $k_{gaussian\ distribution}$ is the weighted average of the data points, weighted by the responsibilities:
 
 ```math
 \mu_k = \frac{1}{N_k} \sum_{n=1}^{N} \gamma_{nk} x_n
